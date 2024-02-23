@@ -1,7 +1,8 @@
 const Movie = require('../model/Movie.js');
 
-const welcome = (req, res) => {
-    res.send('Welcome');
+const allMovies = async (req, res) => {
+    const allMovies = await Movie.find();
+    return res.send(allMovies);
 };
 
 // Function to save a movie to the database
@@ -15,8 +16,14 @@ const Createmovie = async(req, res) => {
     });
 
     movie.save();
-    res.send(movie);
+    return res.send(movie);
+};
+
+// // Function to delete a movie from the database
+const deleteMovie = async (req, res) => {
+    const movie = await Movie.findByIdAndDelete(req.params.id);
+    return res.send(movie);
 };
 
 
-module.exports = { welcome, Createmovie };
+module.exports = { allMovies, Createmovie, deleteMovie };
