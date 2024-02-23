@@ -5,11 +5,8 @@ const PORT = 5000 || process.env.PORT;
 const db = require('./database/db.js');
 db();
 
-
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
-
+// Routes
+app.use(require('./routes/index.js'));
 
 app.listen(PORT, () => {
     console.log(`Rodando na porta ${PORT}`);
