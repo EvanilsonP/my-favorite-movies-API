@@ -10,6 +10,25 @@ const homePage = async(req, res) => {
     }
 };
 
+const createMovie = async(req, res) => {
+
+    try {
+        const movie = await new Movie({
+            title: req.body.title,
+            description: req.body.description,
+            image_url: req.body.image_url,
+            trailer_url: req.body.trailer_url
+        });
+    
+        movie.save();
+        return res.status(201).json(movie);
+
+    } 
+    catch (error) {
+        return res.status(400).json(error);
+    }
+};
+
 const allMovies = async (req, res) => {
 
     try {
@@ -30,26 +49,6 @@ const movieByID = async(req, res) => {
     } 
     catch (error) {
         console.log(error);
-    }
-};
-
-// Function to save a movie to the database
-const Createmovie = async(req, res) => {
-
-    try {
-        const movie = await new Movie({
-            title: req.body.title,
-            description: req.body.description,
-            image_url: req.body.image_url,
-            trailer_url: req.body.trailer_url
-        });
-    
-        movie.save();
-        return res.status(201).json(movie);
-
-    } 
-    catch (error) {
-        return res.status(401).json(error);
     }
 };
 
@@ -86,4 +85,4 @@ const updateMovie = async(req, res) => {
 };
 
 
-module.exports = { homePage, allMovies, movieByID, Createmovie, deleteMovie, updateMovie };
+module.exports = { homePage, allMovies, movieByID, createMovie, deleteMovie, updateMovie };

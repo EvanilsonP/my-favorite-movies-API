@@ -11,7 +11,7 @@ router.get('/', controller.homePage);
 router.get('/allMovies', controller.allMovies);
 router.get('/movie/:id', checkMovieExists, controller.movieByID);
 
-router.post('/create', checkRequiredFields, movieValidation, controller.Createmovie);
+router.post('/create', checkRequiredFields, movieValidation, controller.createMovie);
 router.delete('/:id', checkMovieExists, controller.deleteMovie);
 router.put('/:id', checkMovieExists, controller.updateMovie);
 

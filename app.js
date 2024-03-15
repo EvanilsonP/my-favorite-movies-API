@@ -14,3 +14,5 @@ app.use(require('./routes/index.js'));
 app.listen(PORT, () => {
     console.log(`Rodando na porta ${PORT}`);
 });
+
+module.exports = app;
