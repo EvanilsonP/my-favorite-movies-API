@@ -3,7 +3,8 @@ const router = express.Router();
 const controller = require('../controllers/MovieController.js');
 
 // Routes
-router.get('/', controller.allMovies);
+router.get('/', controller.homePage);
+router.get('/allMovies', controller.allMovies);
 router.post('/', controller.Createmovie);
 router.delete('/:id', controller.deleteMovie);
 router.put('/:id', controller.updateMovie);

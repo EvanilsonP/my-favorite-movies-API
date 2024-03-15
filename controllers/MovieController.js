@@ -1,9 +1,14 @@
 const Movie = require('../model/Movie.js');
 
+
+const homePage = async (req, res) => {
+    res.status(200).json({ message: "Welcome to the home page. Feel free to explore the features this API provides you."})
+};
+
 const allMovies = async (req, res) => {
 
     const allMovies = await Movie.find();
-    return res.send(allMovies);
+    return res.status(200).json(allMovies);
 };
 
 // Function to save a movie to the database
@@ -41,4 +46,4 @@ const updateMovie = async (req, res) => {
 };
 
 
-module.exports = { allMovies, Createmovie, deleteMovie, updateMovie };
+module.exports = { allMovies, Createmovie, deleteMovie, updateMovie, homePage };
