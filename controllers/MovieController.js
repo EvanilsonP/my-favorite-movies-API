@@ -1,6 +1,5 @@
 const Movie = require('../model/Movie.js');
 
-
 const homePage = async(req, res) => {
 
     try {
@@ -50,7 +49,7 @@ const Createmovie = async(req, res) => {
 
     } 
     catch (error) {
-        console.log(error);
+        return res.status(401).json(error);
     }
 };
 
