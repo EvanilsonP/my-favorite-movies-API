@@ -1,5 +1,5 @@
 # Sobre
-CRUD - API contendo a lista dos meus filmes favoritos.
+CRUD - API contendo a lista dos meus filmes favoritos
 
 # Rotas
 router.get('/', controller.homePage);  
