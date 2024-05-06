@@ -42,5 +42,4 @@ Para testes foi usado a biblitoeca Jest;
 # Novas funcionalidades
 Até hoje o dia de hoje 15/03/24 as funcionalidades de criar usuário e login não foram implementadas, assim como autorização, autenticação e criptografia. 
 
-# TO BE UPDATED ...
  
